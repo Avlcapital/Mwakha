@@ -1,6 +1,5 @@
 import PageHero from '../components/PageHero'
 import SectionLead from '../components/SectionLead'
-import { traceabilitySteps } from '../data/buyerExperienceContent'
 import {
   assuranceCards,
   marketCards,
@@ -55,33 +54,6 @@ export default function ServicesPage() {
       </section>
 
       <section className="section">
-        <div className="traceability-layout">
-          <article className="content-card traceability-layout__intro">
-            <p className="eyebrow">Traceability map</p>
-            <h2>Show buyers how tea moves from origin to port.</h2>
-            <p>
-              One of the clearest gaps in the document feedback was a more
-              visible origin-to-shipment story. This section translates that
-              requirement into a short operational map buyers can understand at
-              a glance.
-            </p>
-          </article>
-
-          <div className="traceability-grid">
-            {traceabilitySteps.map((step, index) => (
-              <article className="content-card trace-card" key={step.title}>
-                <span className="trace-card__index">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--tint">
         <div className="service-mosaic">
           <article className="content-card service-mosaic__intro">
             <p className="eyebrow">Market coverage</p>

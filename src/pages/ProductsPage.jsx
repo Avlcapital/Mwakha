@@ -1,10 +1,5 @@
 import PageHero from '../components/PageHero'
 import {
-  buyerDeckLink,
-  productDetailCards,
-  specSheetLink,
-} from '../data/buyerExperienceContent'
-import {
   formatCards,
   productAudienceCards,
   productCards,
@@ -17,15 +12,15 @@ export default function ProductsPage() {
       <PageHero
         variant="products"
         eyebrow="Product range"
-        title="Kenyan Orthodox, CTC, Green, and private label tea programs."
-        text="Built for procurement teams that need clearer answers on grade, MOQ, packaging, lead time, sample availability, and pricing approach before the first serious buying conversation."
+        title="Tea categories arranged for real buying conversations."
+        text="This page gives each tea line more room to breathe, which makes the site feel closer to a working export catalog and less like a compressed brochure trying to say everything at once."
         primaryAction={{
           href: '/contact/',
-          label: 'Request Samples — 72 Hour Prep',
+          label: 'Request Product Direction',
         }}
         secondaryAction={{
-          href: specSheetLink,
-          label: 'Open Spec Sheet',
+          href: '/export-services/',
+          label: 'See Export Services',
         }}
         image={siteImages.leavesImage}
         imageAlt="Loose black tea leaves"
@@ -33,7 +28,7 @@ export default function ProductsPage() {
         secondaryImageAlt="Cup of tea"
         note={{
           eyebrow: 'Product focus',
-          text: 'Buyer details, spec access, and sample readiness in one page.',
+          text: 'Dedicated room for tea categories, formats, and buyer fit.',
         }}
       />
 
@@ -62,73 +57,6 @@ export default function ProductsPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section spec-section">
-        <article className="resource-panel resource-panel--primary">
-          <p className="eyebrow">Buyer spec quick view</p>
-          <h2>Origin, grade, MOQ, lead time, and pricing approach in one view.</h2>
-          <p>
-            The document review highlighted this as a missing conversion layer:
-            buyers need commercial facts early enough to qualify the
-            conversation before they request a sample or quote.
-          </p>
-          <div className="resource-panel__actions">
-            <a className="button button--solid" href={specSheetLink} target="_blank" rel="noreferrer">
-              Download Spec Sheet
-            </a>
-            <a className="button button--text" href={buyerDeckLink} target="_blank" rel="noreferrer">
-              Open Buyer Deck
-            </a>
-          </div>
-        </article>
-
-        <div className="spec-grid">
-          {productDetailCards.map((product) => (
-            <article className="content-card spec-card" key={product.id}>
-              <div className="spec-card__header">
-                <h3>{product.title}</h3>
-                <a href={`${specSheetLink}#${product.id}`} target="_blank" rel="noreferrer">
-                  View sheet
-                </a>
-              </div>
-              <dl className="spec-list">
-                <div>
-                  <dt>Origin region</dt>
-                  <dd>{product.originRegion}</dd>
-                </div>
-                <div>
-                  <dt>Grade</dt>
-                  <dd>{product.grade}</dd>
-                </div>
-                <div>
-                  <dt>Tasting profile</dt>
-                  <dd>{product.tastingProfile}</dd>
-                </div>
-                <div>
-                  <dt>MOQ</dt>
-                  <dd>{product.moq}</dd>
-                </div>
-                <div>
-                  <dt>Packaging</dt>
-                  <dd>{product.packaging}</dd>
-                </div>
-                <div>
-                  <dt>Lead time</dt>
-                  <dd>{product.leadTime}</dd>
-                </div>
-                <div>
-                  <dt>Price band</dt>
-                  <dd>{product.priceBand}</dd>
-                </div>
-                <div>
-                  <dt>Sample availability</dt>
-                  <dd>{product.sampleAvailability}</dd>
-                </div>
-              </dl>
-            </article>
-          ))}
         </div>
       </section>
 
