@@ -1,6 +1,5 @@
 import PageHero from '../components/PageHero'
 import SectionLead from '../components/SectionLead'
-import { buyerDeckLink, specSheetLink } from '../data/buyerExperienceContent'
 import {
   companyCards,
   homeHighlights,
@@ -13,21 +12,21 @@ export default function HomePage() {
     <>
       <PageHero
         variant="home"
-        eyebrow="Kenyan tea, export ready"
-        title="Premium Orthodox, CTC, and Green Tea for private label and bulk buyers."
-        text="Consistent grades, traceable origin, export packaging, and 72 hour sample turnaround. FOB/CIF options for Europe, MENA, and North America."
+        eyebrow="Tea export programs for serious buyers"
+        title="From Kenyan highlands to dependable global tea shelves."
+        text="Inspired by traditional exporter websites but rebuilt as a richer multi-page experience, Mwakha positions tea as both an origin story and a supply chain promise. Buyers can now explore the company, product range, export services, and contact path page by page."
         primaryAction={{
           href: '/contact/',
-          label: 'Request Samples — 72 Hour Prep',
+          label: 'Start an Inquiry',
         }}
         secondaryAction={{
           href: '/products/',
           label: 'View Product Slate',
         }}
         metrics={[
-          { value: '72hr', label: 'Sample turnaround' },
-          { value: 'Private label ready', label: 'Artwork and MOQ guidance' },
-          { value: 'FOB / CIF', label: 'Trade terms available' },
+          { value: '72hr', label: 'Sample prep direction' },
+          { value: 'Bulk + Retail', label: 'Packing flexibility' },
+          { value: 'FOB / CFR / CIF', label: 'Shipment support' },
         ]}
         image={siteImages.plantationImage}
         imageAlt="Tea plantation in the highlands"
@@ -43,35 +42,6 @@ export default function HomePage() {
         {trustPoints.map((point) => (
           <p key={point}>{point}</p>
         ))}
-      </section>
-
-      <section className="section resource-band">
-        <article className="resource-panel resource-panel--primary">
-          <p className="eyebrow">Buyer resources</p>
-          <h2>Procurement teams need more than one CTA.</h2>
-          <p>
-            The documents call for a direct sample action, a browsing path, and
-            a downloadable buyer resource. This section adds the resource layer
-            that was still missing from the site.
-          </p>
-          <div className="resource-panel__actions">
-            <a className="button button--solid" href={buyerDeckLink} target="_blank" rel="noreferrer">
-              Download Buyer Deck
-            </a>
-            <a className="button button--text" href={specSheetLink} target="_blank" rel="noreferrer">
-              Open Spec Sheet
-            </a>
-          </div>
-        </article>
-
-        <article className="resource-panel">
-          <p className="eyebrow">Trust cue line</p>
-          <h3>Exporting since 2010 · HACCP-aligned process · FOB & CIF terms available</h3>
-          <p>
-            Contact hours: Mon–Fri, 08:00–17:00 EAT. Fastest response for
-            verified buyers and sample request submissions.
-          </p>
-        </article>
       </section>
 
       <section className="section">

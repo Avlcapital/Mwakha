@@ -1,18 +1,9 @@
 import PageHero from '../components/PageHero'
-import SampleRequestForm from '../components/SampleRequestForm'
-import {
-  buyerDeckLink,
-  sampleRequestOptions,
-  specSheetLink,
-} from '../data/buyerExperienceContent'
 import {
   contactCards,
   contactChecklist,
   siteImages,
 } from '../data/siteContent'
-
-const whatsappLink =
-  'https://wa.me/254700000000?text=Hello%20Mwakha%20team,%20I%20would%20like%20to%20discuss%20tea%20samples.'
 
 export default function ContactPage() {
   return (
@@ -20,15 +11,15 @@ export default function ContactPage() {
       <PageHero
         variant="contact"
         eyebrow="Contact and inquiry"
-        title="Start a sample request, private label brief, or wholesale tea inquiry."
-        text="The document review asked for a clearer path into the business, so this page now combines decision routes, response expectations, and a guided sample request flow."
+        title="A cleaner path from interest to the next shipment conversation."
+        text="The contact page should help different buyer types know exactly how to approach Mwakha, what to include, and where the conversation goes next."
         primaryAction={{
-          href: '#sample-request',
-          label: 'Start Sample Request',
+          href: 'mailto:export@mwakha.co.ke?subject=Export%20Tea%20Inquiry',
+          label: 'Email the Export Desk',
         }}
         secondaryAction={{
-          href: buyerDeckLink,
-          label: 'Open Buyer Deck',
+          href: '/company/',
+          label: 'Revisit the Company Profile',
         }}
         image={siteImages.plantationImage}
         imageAlt="Tea plantation landscape"
@@ -73,79 +64,15 @@ export default function ContactPage() {
               <p className="eyebrow">What to send</p>
               <h3>A short buyer brief helps the conversation move faster.</h3>
               <p>
-                The form below captures the same commercial details the document
-                feedback asked for: product fit, sample size, shipping method,
-                and private label readiness.
+                Even without a backend form yet, the page can still guide users
+                toward the information that makes sample and quotation
+                discussions more productive.
               </p>
               <ul className="feature-list">
                 {contactChecklist.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </article>
-
-            <article className="content-card contact-note">
-              <p className="eyebrow">Response window</p>
-              <h3>Mon-Fri, 08:00-17:00 EAT</h3>
-              <p>{sampleRequestOptions.responseTime}</p>
-              <a
-                className="inline-link"
-                href={whatsappLink}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Message on WhatsApp
-              </a>
-            </article>
-          </aside>
-        </div>
-      </section>
-
-      <section className="section section--quiet" id="sample-request">
-        <div className="contact-experience">
-          <SampleRequestForm />
-
-          <aside className="contact-rail">
-            <article className="content-card">
-              <p className="eyebrow">Reference materials</p>
-              <h3>Open the same commercial resources buyers ask for most.</h3>
-              <p>
-                The feedback documents called for direct access to a buyer deck
-                and product sheet so prospects can self-qualify before a call.
-              </p>
-              <div className="resource-panel__actions resource-panel__actions--stack">
-                <a className="button button--solid" href={buyerDeckLink}>
-                  Download Buyer Deck
-                </a>
-                <a className="button button--text" href={specSheetLink}>
-                  Open Spec Sheet
-                </a>
-              </div>
-            </article>
-
-            <article className="content-card">
-              <p className="eyebrow">Why this helps</p>
-              <h3>Serious buyers can give better briefs when the path is guided.</h3>
-              <ul className="feature-list">
-                <li>Sample size and fee are visible before submission.</li>
-                <li>Shipping and incoterm preferences are collected early.</li>
-                <li>Private label prospects can declare pack size and volume.</li>
-              </ul>
-            </article>
-
-            <article className="content-card">
-              <p className="eyebrow">Direct desk</p>
-              <h3>{sampleRequestOptions.whatsappLabel}</h3>
-              <p>
-                Useful for confirming sample dispatch, checking response status,
-                or sharing quick clarifications after the form is submitted.
-              </p>
-              <a
-                className="inline-link"
-                href="mailto:export@mwakha.co.ke?subject=Export%20Tea%20Inquiry"
-              >
-                Email the export desk
-              </a>
             </article>
           </aside>
         </div>
@@ -170,9 +97,9 @@ export default function ContactPage() {
               Write to export@mwakha.co.ke
             </a>
             <div className="cta-details">
-              <span>Nairobi coordination | 08:00-17:00 EAT</span>
+              <span>Nairobi coordination</span>
               <span>Mombasa shipping support</span>
-              <span>Private label friendly | WhatsApp ready</span>
+              <span>Private label friendly</span>
             </div>
           </div>
         </div>
