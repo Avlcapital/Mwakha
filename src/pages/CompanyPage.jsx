@@ -1,5 +1,11 @@
 import PageHero from '../components/PageHero'
 import {
+  buyerDeckLink,
+  buyerTestimonials,
+  certificateBadges,
+  specSheetLink,
+} from '../data/buyerExperienceContent'
+import {
   companyCards,
   principleCards,
   siteImages,
@@ -11,15 +17,15 @@ export default function CompanyPage() {
       <PageHero
         variant="reverse"
         eyebrow="Company profile"
-        title="A company page that feels ready for buyer scrutiny."
-        text="The goal here is not to sound big for the sake of sounding big. It is to communicate sourcing mindset, commercial reliability, and presentation quality in a way that feels credible to importers and distributors."
+        title="A company profile that pairs brand story with buyer proof."
+        text="The goal here is not to sound big for the sake of sounding big. It is to communicate sourcing mindset, commercial reliability, trust cues, and presentation quality in a way that feels credible to importers and distributors."
         primaryAction={{
           href: '/contact/',
           label: 'Talk to the Export Desk',
         }}
         secondaryAction={{
-          href: '/products/',
-          label: 'See Tea Categories',
+          href: buyerDeckLink,
+          label: 'Open Buyer Deck',
         }}
         image={siteImages.cupImage}
         imageAlt="Cup of black tea"
@@ -81,6 +87,44 @@ export default function CompanyPage() {
               <p>{card.text}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section section--quiet">
+        <div className="trust-showcase">
+          <article className="resource-panel resource-panel--primary trust-showcase__intro">
+            <p className="eyebrow">Buyer confidence</p>
+            <h2>Trust signals now sit beside the company story.</h2>
+            <p>
+              The document review called for stronger credibility markers, not
+              just better layout. This section brings food-safety alignment,
+              export documentation readiness, and private label support into one
+              visible proof block.
+            </p>
+            <ul className="feature-list certificate-list">
+              {certificateBadges.map((badge) => (
+                <li key={badge}>{badge}</li>
+              ))}
+            </ul>
+            <div className="resource-panel__actions">
+              <a className="button button--solid" href={buyerDeckLink}>
+                Download Buyer Deck
+              </a>
+              <a className="button button--text" href={specSheetLink}>
+                Open Spec Sheet
+              </a>
+            </div>
+          </article>
+
+          <div className="testimonial-stack">
+            {buyerTestimonials.map((testimonial) => (
+              <article className="content-card quote-card" key={testimonial.author}>
+                <p className="eyebrow">Buyer view</p>
+                <p className="quote-card__quote">{`"${testimonial.quote}"`}</p>
+                <p className="quote-card__author">{testimonial.author}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </>
