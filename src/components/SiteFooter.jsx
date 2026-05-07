@@ -1,3 +1,4 @@
+import { buyerDeckLink } from '../data/buyerExperienceContent'
 import {
   companyName,
   companyTagline,
@@ -20,11 +21,8 @@ export default function SiteFooter() {
               private label buyers with a cleaner commercial presence.
             </p>
           </div>
-          <a
-            className="button button--solid footer-button"
-            href="mailto:export@mwakha.co.ke?subject=Buyer%20Deck%20Request"
-          >
-            Request Buyer Deck
+          <a className="button button--solid footer-button" href={buyerDeckLink}>
+            Download Buyer Deck
           </a>
         </div>
 
@@ -72,8 +70,8 @@ export default function SiteFooter() {
 
       <div className="footer-meta">
         <p>
-          © {new Date().getFullYear()} {companyName}. Tea export website concept
-          for wholesale buyers and private label partners.
+          Copyright {new Date().getFullYear()} {companyName}. Tea export
+          website concept for wholesale buyers and private label partners.
         </p>
         <div className="footer-meta-links">
           <a href="mailto:export@mwakha.co.ke">export@mwakha.co.ke</a>
